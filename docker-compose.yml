@@ -24,8 +24,8 @@ services:
     image: "mongo"
     ports:
       - "27017:27017"
-  ngnix:
-    container_name: ngnix
-    image: "ngnix"
+  nginx:
+    container_name: nginx
+    image: "nginx"
     ports:
       - "80:80"
