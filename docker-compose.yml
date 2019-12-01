@@ -1,7 +1,7 @@
 version: "2"
 services:
-  test-App:
-    container_name: test-App
+  test-app:
+    container_name: test-app
     build:
       context: .
     ports:
