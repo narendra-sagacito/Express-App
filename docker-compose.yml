@@ -1,0 +1,26 @@
+version: "2"
+services:
+  test-App:
+    container_name: test-App
+    build:
+      context: .
+    ports:
+      - "8787:80"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - "mongo"
+    environment:
+      - "MONGO_URL=mongodb://mongo:27017"
+      - "PORT=80"
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+     - "6379:6379"
+  mongo:
+    container_name: mongo
+    image: "mongo"
+    ports:
+      - "27017:27017"
